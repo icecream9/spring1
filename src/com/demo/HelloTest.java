@@ -52,7 +52,7 @@ public class HelloTest {
 		HelloApi bean4=beanFactory.getBean("bean4",HelloApi.class);
 		bean4.sayHello();
 	}
-	@Test
+	//@Test
 	public void testContructorDependencyinjectTest(){
 		BeanFactory beanFactory=new ClassPathXmlApplicationContext("hello.xml");
 		HelloApi byindex=beanFactory.getBean("byindex",HelloApi.class);
@@ -64,7 +64,59 @@ public class HelloTest {
 		HelloApi byName1=beanFactory.getBean("byName1",HelloApi.class);
 		byName1.sayHello();
 	}
+	//@Test
+	public void testSetterDependencyInject(){
+		BeanFactory beanFactory= new ClassPathXmlApplicationContext("hello.xml");
+		HelloApi bean5=beanFactory.getBean("bean5",HelloApi.class);
+		bean5.sayHello();
+	}
+	//@Test
+	public void testBooleanBean(){
+		BeanFactory beanFactory= new ClassPathXmlApplicationContext("hello.xml");
+		HelloApi bean6=beanFactory.getBean("bean6",HelloApi.class);
+		//System.out.println(bean6.isOk());
+	}
+	//@Test
+	public void testListInject() {
+		BeanFactory beanFactory=new ClassPathXmlApplicationContext("listInjext.xml");
+		ListTestBean listBean=beanFactory.getBean("listBean",ListTestBean.class);
+		System.out.println(listBean.getValues().size());
+		
+	}
+	//@Test
+	public void testSetInject() {
+		BeanFactory beanFactory=new ClassPathXmlApplicationContext("listInjext.xml");
+		SetTestBean setBean=beanFactory.getBean("setBean",SetTestBean.class);
+		System.out.println(setBean.getValues().size());
+		
+	}
 	
+	
+	//@Test
+	public void testCollectionInject() {
+		BeanFactory beanFactory=new ClassPathXmlApplicationContext("listInjext.xml");
+		CollectionTestBean collectionBean=beanFactory.getBean("collectionBean",CollectionTestBean.class);
+		System.out.println(collectionBean.getValues().size());
+		
+	}
+	
+	//@Test
+	public void testArrayInject() {
+		BeanFactory beanFactory=new ClassPathXmlApplicationContext("arrayInject.xml");
+		ArrayTestBean arrayBean=beanFactory.getBean("arrayBean",ArrayTestBean.class);
+		System.out.println(arrayBean.getArray().length);
+		System.out.println(arrayBean.getArray2()[0].length);
+		
+	}
+	
+	@Test
+	public void testMapInject() {
+		BeanFactory beanFactory=new ClassPathXmlApplicationContext("mapInject.xml");
+		MapTestBean mapBean=beanFactory.getBean("mapBean",MapTestBean.class);
+		System.out.println(mapBean.getValues().size());
+		System.out.println(mapBean.getValues().get("3"));
+		
+	}
 //public static void main(String[] args) {
 ////	HelloTest test=new HelloTest();
 ////	test.testHelloWorld();

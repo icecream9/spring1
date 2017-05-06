@@ -32,17 +32,22 @@ http://www.springframework.org/schema/context                http://www.springfr
 		<constructor-arg type="int" value="2">
 		</constructor-arg>
 	</bean>
-	<!--
-	<bean id="byName" class="com.demo.HelloImpl3">
-		<constructor-arg name="message" value="Hello morining">
-		</constructor-arg>
-		<constructor-arg name="index" value="3">
-		</constructor-arg>
-	</bean>  -->
-		<bean id="byName1" class="com.demo.HelloImpl3">
+	<!-- <bean id="byName" class="com.demo.HelloImpl3"> <constructor-arg name="message" 
+		value="Hello morining"> </constructor-arg> <constructor-arg name="index" 
+		value="3"> </constructor-arg> </bean> -->
+	<bean id="byName1" class="com.demo.HelloImpl3">
 		<constructor-arg name="m" value="Hello morining">
 		</constructor-arg>
 		<constructor-arg name="i" value="3">
 		</constructor-arg>
+	</bean>
+	<bean id="bean5" class="com.demo.HelloImpl4">
+		<property name="message" value="Hello afternoon" />
+		<property name="index">
+			<value>1</value>
+		</property>
+	</bean>
+	<bean id = "bean6" class="com.demo.BooleanTestBean">
+	<property name = "success" value="true"/>
 	</bean>
 </beans>
