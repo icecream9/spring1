@@ -12,7 +12,7 @@ http://www.springframework.org/schema/context                http://www.springfr
 	</bean>
 	<bean id ="bean2" class="com.demo.chapter3.HelloApiDecorator">
 		<property name="helloApi">
-			<ref bean="helloApi" />
+			<ref local="helloApi" />
 		</property>
 	</bean>
 
